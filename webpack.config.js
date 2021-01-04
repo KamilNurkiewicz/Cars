@@ -6,6 +6,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   mode: 'development',
+  target: 'web',
   entry: ['./src/js/app.js'],
   output: {
     filename: 'app.js',
@@ -14,7 +15,11 @@ module.exports = {
   watch: true,
   devtool: 'eval-cheap-module-source-map',
   devServer: {
-    contentBase: './',
+    contentBase: path.join(__dirname, 'dist'),
+    publicPath: '/',
+    open: true,
+    watchContentBase: true,
+    port: 8080,
   },
   module: {
     rules: [
