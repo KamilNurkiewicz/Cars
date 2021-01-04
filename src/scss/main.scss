@@ -1,17 +1,16 @@
-$colorMain: white;
-
-body {
-    background: red;
-    color: $colorMain;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 4rem;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0 0;
 }
 
-//testujemy prefixy
-@keyframes test {
-    100% {
-        margin: 10px;
-    }
+.header{
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem 5rem;
+}
+
+.header__nav{
+    list-style: none;
 }
