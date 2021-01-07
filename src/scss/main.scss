@@ -3,14 +3,56 @@
 *::after {
   box-sizing: border-box;
   margin: 0 0;
+  font-family: 'Roboto', sans-serif;
 }
 
-.header{
-    display: flex;
-    justify-content: space-between;
-    margin: 2rem 5rem;
+.header {
+  display: flex;
+  position: fixed;
+  justify-content: space-between;
+  height: 3.75rem;
+  width: 100%;
+  border-bottom: 1px solid grey;
+  z-index: 101;
+  background-color: pink;
+  align-items: center;
 }
 
-.header__nav{
-    list-style: none;
+.header__logo {
+  margin-left: 4vw;
+  font-weight: 300;
+}
+
+.header__logo::first-letter {
+  color: red;
+  font-weight: 700;
+}
+
+.header__nav {
+  display: none;
+}
+
+.header__list {
+  display: flex;
+  list-style-type: none;
+  flex-direction: row;
+}
+
+.header__item {
+  margin-right: 2vw;
+}
+
+.header__div {
+  margin-right: 4vw;
+}
+
+.content {
+  padding-top: 3.75rem;
+  z-index: 100;
+}
+
+@media screen and (min-width: 320px) {
+  .header__nav {
+    display: block;
+  }
 }
