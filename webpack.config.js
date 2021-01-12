@@ -82,7 +82,7 @@ module.exports = {
             options: {
               context: 'public',
               name: '/images/[name].[ext]',
-              publicPath: '/',
+              publicPath: '/src/images',
             },
           },
         ],
