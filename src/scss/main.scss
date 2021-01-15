@@ -84,13 +84,13 @@ body {
   display: flex;
   align-items: center;
   position: relative;
-  width: 30px;
-  height: 25px;
+  width: 1.8rem;
+  height: 1.5rem;
 }
 
 .hamburger__bars {
   position: absolute;
-  width: 30px;
+  width: 1.8rem;
   height: 2px;
   background-color: #000;
   transition: transform 220ms ease-in-out;
@@ -98,17 +98,17 @@ body {
   &::after {
     display: block;
     position: absolute;
-    width: 30px;
+    width: 1.8rem;
     height: 2px;
     background-color: #000;
     content: '';
   }
   &:before {
-    top: -12px;
+    top: -0.75rem;
     transition: top 100ms 250ms ease-in, transform 220ms ease-in-out;
   }
   &:after {
-    bottom: -12px;
+    bottom: -0.75rem;
     transition: bottom 100ms 250ms ease-in, transform 220ms ease-in-out;
   }
 }
@@ -180,7 +180,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid red;
+  border: 1px solid #4cd8f4;
   border-radius: 2rem;
   width: 2rem;
   height: 2rem;
@@ -192,7 +192,7 @@ body {
 }
 
 .main-header__language-btn {
-  margin-left: 2vw;
+  border-radius: 1.5rem;
 }
 
 .mobile-nav__items {
@@ -203,16 +203,18 @@ body {
   position: absolute;
   color: #f2f4ff;
   list-style-type: none;
-  margin-top: 100px;
+  margin-top: 6.25rem;
   overflow: hidden;
   padding: 0;
   & li {
+    cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 30px;
+    height: 1.8rem;
     width: 0;
-    margin: 20px 0;
+    margin: 1.2rem 0;
+    border-radius: 1.5rem;
     background-color: #4cd8f4;
     @include transition(all 0.6s ease-in);
   }
@@ -220,7 +222,7 @@ body {
 
 .mobile-nav__items--active {
   & li {
-    width: 200px;
+    width: 12.5rem;
   }
 }
 
@@ -239,13 +241,13 @@ body {
 }
 
 .picture {
-  height: 200px;
-  width: 300px;
+  height: 12.5rem;
+  width: 18.75rem;
 }
 
 .main-footer {
   flex-shrink: 0;
-  height: 50px;
+  height: 3.1rem;
   width: 100%;
   background-color: #f2f4ff;
   color: #4865e6;
@@ -258,7 +260,7 @@ body {
   visibility: hidden;
 }
 
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 46.8rem) {
   .main-logo {
     margin-left: 4vw;
   }
