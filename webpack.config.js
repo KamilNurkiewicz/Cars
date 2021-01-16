@@ -7,16 +7,15 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = {
   mode: 'development',
   target: 'web',
-  entry: ['./src/js/app.js'],
+  entry: './src/js/app.js',
   output: {
-    filename: 'app.js',
     path: path.resolve(__dirname, './dist'),
+    filename: 'app.js',
   },
   watch: true,
   devtool: 'eval-cheap-module-source-map',
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
-    publicPath: '/',
     open: true,
     watchContentBase: true,
     port: 8080,
@@ -37,21 +36,6 @@ module.exports = {
             ],
           },
         },
-      },
-      {
-        test: /\.css$/i,
-        use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader',
-          {
-            loader: 'postcss-loader',
-            options: {
-              postcssOptions: {
-                plugins: [['autoprefixer']],
-              },
-            },
-          },
-        ],
       },
       {
         test: /\.s[ac]ss$/i,
@@ -75,14 +59,18 @@ module.exports = {
         ],
       },
       {
-        test: /\.(png|jpe?g|gif|webp|awif|svg)$/i,
+        test: /\.html$/,
+        use: ['html-loader'],
+      },
+      {
+        test: /\.(png|jpg|jpeg|gif|webp|awif|svg)$/,
         use: [
           {
             loader: 'file-loader',
             options: {
-              context: 'public',
-              name: '/images/[name].[ext]',
-              publicPath: '/src/images',
+              name: '[name].[ext]',
+              outputPath: 'images/',
+              publicPath: 'images/',
             },
           },
         ],

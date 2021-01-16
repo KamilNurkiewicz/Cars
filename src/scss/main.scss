@@ -22,6 +22,28 @@
   transition: $params;
 }
 
+$colors: (
+  main: blue,
+  secondary: red,
+  third-rate: yellow,
+);
+
+@mixin socialIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #4cd8f4;
+  border-radius: 2rem;
+  width: 2rem;
+  height: 2rem;
+  margin-right: 1rem;
+  cursor: pointer;
+  & img {
+    height: 1rem;
+    width: 1rem;
+  }
+}
+
 *,
 *::before,
 *::after {
@@ -177,17 +199,16 @@ body {
 }
 
 .social__item {
+  @include socialIcon;
+}
+
+.mobile-nav__social {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid #4cd8f4;
-  border-radius: 2rem;
-  width: 2rem;
-  height: 2rem;
-  margin-right: 1rem;
-  & img {
-    height: 1rem;
-    width: 1rem;
+  & a {
+    @include socialIcon;
+    height: 0;
+    width: 0;
+    @include transition(all 0.6s ease-in);
   }
 }
 
@@ -223,6 +244,12 @@ body {
 .mobile-nav__items--active {
   & li {
     width: 12.5rem;
+  }
+  & .mobile-nav__social {
+    & a {
+      height: 2rem;
+      width: 2rem;
+    }
   }
 }
 
