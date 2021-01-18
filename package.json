@@ -1,7 +1,7 @@
 {
-  "name": "car",
+  "name": "site",
   "version": "1.0.0",
-  "description": "Car Project",
+  "description": "Site Project",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -12,14 +12,14 @@
   "browserslist": "> 0.3%, not dead",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/KamilNurkiewicz/Cars.git"
+    "url": "git+https://github.com/KamilNurkiewicz/Site.git"
   },
   "author": "Kamil Nurkiewicz",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/KamilNurkiewicz/Cars/issues"
+    "url": "https://github.com/KamilNurkiewicz/Site/issues"
   },
-  "homepage": "https://github.com/KamilNurkiewicz/Cars#readme",
+  "homepage": "https://github.com/KamilNurkiewicz/Site#readme",
   "devDependencies": {
     "@babel/core": "^7.12.10",
     "@babel/preset-env": "^7.12.11",
