@@ -5,6 +5,7 @@ const content = document.querySelector('.content');
 const mainHeader = document.querySelector('.main-header');
 const mainFooter = document.querySelector('.main-footer');
 const navItems = document.querySelector('.mobile-nav__items');
+
 hamburger.addEventListener('click', () => {
   hamburger.classList.toggle('main-header__hamburger--active');
   content.classList.toggle('content--mobile-nav-active');

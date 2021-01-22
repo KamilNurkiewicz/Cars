@@ -447,7 +447,7 @@ body {
 .second-section {
   display: flex;
   flex-direction: column;
-  height: calc(100vh - 3.75rem);
+  height: calc(100vh - 3.65rem);
   width: 100%;
 }
 
@@ -455,15 +455,15 @@ body {
   display: flex;
   flex-direction: column;
   height: 50vh;
+  overflow: hidden;
   & img {
-    height: 80%;
     width: 100%;
     object-fit: cover;
   }
   & .picture__div {
     position: absolute;
     width: 100%;
-    padding-top: 5vh;
+    padding-top: 3vh;
     padding-left: 2rem;
     color: map-get($map: $colors, $key: secondary);
     & ul {
@@ -508,11 +508,10 @@ body {
   width: 100%;
   background-color: map-get($map: $colors, $key: main);
   & > h3,
-  h1 {
-    padding-bottom: 0.4rem;
-  }
-  & > p {
-    padding-bottom: 2rem;
+  h2,
+  p {
+    max-width: 70%;
+    padding-bottom: 2vh;
   }
 }
 
