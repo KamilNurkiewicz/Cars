@@ -102,6 +102,13 @@ $colors: (
     brightness(98%) contrast(107%);
 }
 
+@mixin thirdSectionItem {
+  height: 2.5rem;
+  width: 2.5rem;
+  filter: invert(35%) sepia(71%) saturate(1700%) hue-rotate(144deg)
+    brightness(97%) contrast(96%);
+}
+
 *,
 *::before,
 *::after {
@@ -319,7 +326,6 @@ body {
 .mobile-nav__items {
   width: 100%;
   display: flex;
-  pointer-events: none;
   flex-direction: column;
   align-items: center;
   position: absolute;
@@ -359,6 +365,7 @@ body {
 }
 
 .mobile-nav__items--active {
+  position: fixed;
   & li {
     width: 12.5rem;
   }
@@ -388,7 +395,7 @@ body {
   display: flex;
   flex-direction: column;
   position: relative;
-  height: 100vh;
+  height: calc(100vh - 3.75rem);
   & .first-section__picture {
     display: flex;
     flex-direction: column;
@@ -404,7 +411,6 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-bottom: 4rem;
     margin: 0 4%;
     height: 50%;
     & > h3,
@@ -441,12 +447,90 @@ body {
 .second-section {
   display: flex;
   flex-direction: column;
+  height: calc(100vh - 3.75rem);
+  width: 100%;
+}
+
+.second-section__picture {
+  display: flex;
+  flex-direction: column;
+  height: 50vh;
+  & img {
+    height: 80%;
+    width: 100%;
+    object-fit: cover;
+  }
+  & .picture__div {
+    position: absolute;
+    width: 100%;
+    padding-top: 5vh;
+    padding-left: 2rem;
+    color: map-get($map: $colors, $key: secondary);
+    & ul {
+      list-style: none;
+      padding: 0;
+      & li {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding-top: 3vh;
+        & div {
+          padding-left: 5vw;
+          width: 80%;
+        }
+      }
+    }
+  }
+}
+
+.second-section__item--credit {
+  content: url(/src/images/credit-card-flaticon.svg);
+  @include thirdSectionItem;
+}
+
+.second-section__item--dog {
+  content: url(/src/images/dog-flaticon.svg);
+  @include thirdSectionItem;
+}
+
+.second-section__item--motorcycle {
+  content: url(/src/images/motorcycle-flaticon.svg);
+  @include thirdSectionItem;
+}
+
+.second-section__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: map-get($map: $colors, $key: secondary);
+  height: 50%;
+  width: 100%;
+  background-color: map-get($map: $colors, $key: main);
+  & > h3,
+  h1 {
+    padding-bottom: 0.4rem;
+  }
+  & > p {
+    padding-bottom: 2rem;
+  }
+}
+
+.third-section {
+  display: flex;
+  flex-direction: column;
   box-sizing: border-box;
   display: flex;
-  place-content: center;
   align-items: center;
-  margin: 3vw 0;
+  margin: 3vw 0 0 0;
   padding: 3vw 5vw;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(253, 255, 255, 1) 85%,
+    rgba(188, 195, 204, 1) 100%
+  );
   & > h3,
   h1 {
     padding-bottom: 0.6rem;
