@@ -93,13 +93,13 @@ $colors: (
 }
 
 @mixin facebookFilter {
-  filter: invert(54%) sepia(86%) saturate(4352%) hue-rotate(164deg)
-    brightness(98%) contrast(107%);
+  filter: invert(31%) sepia(85%) saturate(2591%) hue-rotate(204deg)
+    brightness(101%) contrast(90%);
 }
 
 @mixin twitterFilter {
-  filter: invert(34%) sepia(36%) saturate(4352%) hue-rotate(164deg)
-    brightness(98%) contrast(107%);
+  filter: invert(54%) sepia(68%) saturate(1877%) hue-rotate(175deg)
+    brightness(93%) contrast(104%);
 }
 
 @mixin thirdSectionItem {
@@ -395,7 +395,7 @@ body {
   display: flex;
   flex-direction: column;
   position: relative;
-  height: calc(100vh - 3.75rem);
+  height: calc(100vh - 3.65rem);
   & .first-section__picture {
     display: flex;
     flex-direction: column;
@@ -419,6 +419,7 @@ body {
     }
     & > p {
       padding-bottom: 2rem;
+      line-height: 1.6rem;
     }
     & a {
       display: flex;
@@ -449,6 +450,17 @@ body {
   flex-direction: column;
   height: calc(100vh - 3.65rem);
   width: 100%;
+  &:hover {
+    & img {
+      filter: blur(4px);
+    }
+    & .picture__div {
+      transform: translate(100%, 0%);
+      & span {
+        transform: rotate(360deg);
+      }
+    }
+  }
 }
 
 .second-section__picture {
@@ -456,15 +468,18 @@ body {
   flex-direction: column;
   height: 50vh;
   overflow: hidden;
+  z-index: 2;
   & img {
     width: 100%;
     object-fit: cover;
   }
   & .picture__div {
+    left: -100%;
     position: absolute;
     width: 100%;
     padding-top: 3vh;
     padding-left: 2rem;
+    transition: (all 0.6s ease-out);
     color: map-get($map: $colors, $key: secondary);
     & ul {
       list-style: none;
@@ -474,6 +489,9 @@ body {
         flex-direction: row;
         align-items: center;
         padding-top: 3vh;
+        & span {
+          transition: (transform 1s cubic-bezier(0.7, 0.1, 0.1, 0.1));
+        }
         & div {
           padding-left: 5vw;
           width: 80%;
@@ -512,6 +530,7 @@ body {
   p {
     max-width: 70%;
     padding-bottom: 2vh;
+    line-height: 1.6rem;
   }
 }
 
@@ -522,7 +541,7 @@ body {
   display: flex;
   align-items: center;
   margin: 3vw 0 0 0;
-  padding: 3vw 5vw;
+  padding: 3vw 15%;
   background: rgb(255, 255, 255);
   background: linear-gradient(
     180deg,
@@ -534,11 +553,14 @@ body {
   h1 {
     padding-bottom: 0.6rem;
   }
+  & p {
+    line-height: 1.4rem;
+  }
 }
 
 .main-footer {
   flex-shrink: 0;
-  height: 3.1rem;
+  height: 4.1rem;
   width: 100%;
   background-color: map-get($map: $colors, $key: main);
   color: map-get($map: $colors, $key: secondary);
@@ -572,8 +594,6 @@ body {
       width: 50%;
       align-items: center;
       justify-content: center;
-      & img {
-      }
     }
     & .first-section__text {
       padding: 0;
@@ -581,6 +601,41 @@ body {
       order: 1;
       height: 100%;
       width: 50%;
+      & p {
+        line-height: 1.8rem;
+      }
+    }
+  }
+
+  .second-section {
+    flex-direction: row;
+    & .second-section__picture {
+      height: 100%;
+      width: 50%;
+      align-items: center;
+      justify-content: center;
+      & img {
+        height: 100vh;
+      }
+      & .picture__div {
+        left:-50%;
+        max-width: 50%;
+      }
+    }
+    & .second-section__text {
+      padding: 0;
+      justify-content: center;
+      height: 100%;
+      width: 50%;
+      & p {
+        line-height: 2rem;
+      }
+    }
+  }
+
+  .third-section{
+    & p {
+      line-height: 2rem;
     }
   }
 }
