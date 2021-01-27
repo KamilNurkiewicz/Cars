@@ -598,12 +598,8 @@ body {
     text-transform: uppercase;
   }
   & .text__row {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
+
     .row__column {
-      display: flex;
-      flex-direction: column;
     }
   }
 }
@@ -690,5 +686,16 @@ body {
 
   .fourth-section {
     flex-direction: row;
+  }
+
+  .fourth-section__picture {
+    height: 100vh;
+    width: 50%;
+  }
+
+  .fourth-section__text {
+    height: 100vh;
+    width: 50%;
+    padding-top: 5%;
   }
 }
